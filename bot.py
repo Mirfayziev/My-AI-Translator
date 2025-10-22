@@ -21,9 +21,15 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # API Keys
-TELEGRAM_TOKEN = os.getenv('8040309330:AAHvjWpg2dbhzrlbpzoQJc2i33O26Ey97pw')
-OPENAI_API_KEY = os.getenv('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')
+TELEGRAM_TOKEN = os.environ.get('8040309330:AAHvjWpg2dbhzrlbpzoQJc2i33O26Ey97pw') or os.getenv('8040309330:AAHvjWpg2dbhzrlbpzoQJc2i33O26Ey97pw')
+OPENAI_API_KEY = os.environ.get('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') or os.getenv('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')
 
+if TELEGRAM_TOKEN:
+    print(f"✅ Token loaded: {TELEGRAM_TOKEN[:10]}...")
+else:
+    print("❌ Token not found!")
+    print(f"Available env vars: {list(os.environ.keys())[:10]}")
+    
 openai.api_key = OPENAI_API_KEY
 
 # User data storage
