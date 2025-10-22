@@ -5,8 +5,8 @@ from telegram.ext import Application, CommandHandler, MessageHandler, filters, C
 import openai
 from deep_translator import GoogleTranslator
 import requests
-import speech_recognition as sr
-from pydub import AudioSegment
+#import speech_recognition as sr
+#from pydub import AudioSegment
 import tempfile
 from dotenv import load_dotenv
 
